@@ -66,7 +66,7 @@ fn validate_input(input: &ResponsesInput) -> Result<(), AgentError> {
 fn validate_tools(tools: &[Tool]) -> Result<(), AgentError> {
     for (i, tool) in tools.iter().enumerate() {
         match tool.tool_type.as_str() {
-            "function" | "web_search" | "retrieval" | "custom" => {}
+            "function" | "web_search" | "retrieval" | "custom" | "namespace" => {}
             other => {
                 return Err(AgentError::new(format!(
                     "Tool {i} has invalid type: {other}"
