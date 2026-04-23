@@ -184,6 +184,10 @@ pub struct Tool {
     // web_search config (OpenAI style)
     #[serde(default)]
     pub web_search: Option<WebSearchConfig>,
+
+    // Namespace container for MCP tool flattening
+    #[serde(default)]
+    pub tools: Option<Vec<Tool>>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
